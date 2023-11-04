@@ -1,0 +1,187 @@
+@keyframes background-change {
+    from {background-color: black;}
+    to {background-color: navy;}
+}
+
+@keyframes fade-in {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+}
+
+@media screen and (min-width: 1px){
+    main {
+        margin: 20px;
+    }
+    body {
+        background-color: navy;
+        color: white;
+        font-family: "Gill Sans", Arial;
+        font-size: 16px;
+        margin: 30px;
+        animation: background-change 2s;
+    }
+    h1 {
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    h2 {
+        color: goldenrod;
+        font-size: 25px;
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    h3 {
+        color: goldenrod;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    p {
+        line-height: 30px;
+        margin: 10px;
+    }
+    img, video {
+        width: 100%;
+        height: auto;
+        border: 5px solid goldenrod;
+        border-radius: 30px;
+        filter: sepia(100%);
+        margin: 20px auto;
+        display: block;
+    }
+    ol {
+        list-style: upper-roman;
+        list-style-position: inside;
+    }
+    li {
+        border: 5px solid goldenrod;
+        border-radius: 30px;
+        padding: 15px;
+        margin: 10px auto;
+    }
+    nav {
+        margin: auto;
+        text-align: center;
+    }
+    a {
+        font-size: 20px;
+        padding: 5px;
+        /* margin: 20px; */
+    }
+    #skip {
+        background-color: goldenrod;
+        color: navy;
+        position: absolute;
+        left: -500px;
+    }
+    #skip:focus{
+        left: 200px;
+    }
+    span {
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+    span a { /*recipe link underline*/
+        text-decoration: underline;
+    }
+    #travel, #pets, #recipes, nav li:hover{
+        text-decoration: underline;
+        color: navy;
+        background-color: goldenrod;
+    }
+    .intro {
+        text-align: center;
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    main {
+        animation: fade-in 4s;
+    }
+    .gallery img, .gallery video{
+        height: 200px;
+        object-fit: cover;
+    }
+    ul li{
+        text-align: center;
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    img[src$='.gif'] {
+        display: none;
+    }
+    body {
+        animation: none;
+    }
+    main {
+        animation: none;
+    }
+}
+
+@media screen and (min-width: 745px){
+    nav{
+        margin: 30px;
+    }
+    nav li{
+       display: inline-block;
+       margin: 20px;
+    }
+    .section{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .intro{
+        text-align: left;
+    }
+    .section h2, .section h3, .section figure:last-of-type{
+        grid-column: 1 / -1;
+    }
+    figure img, .recipe-gallery img{
+        height: 300px; 
+        object-fit: cover;
+    }
+    .section div img{
+        height: 300px;
+        object-fit: cover;
+    }
+    .gallery, .section ul{
+        grid-column: 1 / -1;
+    }
+    .recipe-gallery{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+    input[type = checkbox] {
+        visibility: hidden
+    }
+    .ingredient .checkmark {
+        position: relative;
+        background-color: #fff;
+    }
+    .ingredient .checkmark::before {
+        content: "";
+        position: absolute;
+        right: 30px;
+        top: -20px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid white; 
+        background-color: goldenrod; 
+    }
+
+    .ingredient input[type="checkbox"]:checked + .checkmark::before {
+        background-color: white; 
+        border: 2px solid goldenrod;
+    }
+}
